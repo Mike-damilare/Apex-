@@ -92,21 +92,21 @@ header .container{display:flex;align-items:center;justify-content:space-between}
 @keyframes tickerLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ── SECTION COMMON ──────────────────────────────────── */
-section{padding:88px 0}
+section{padding:80px 0}
 .sec-label{font-family:var(--ff-h);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sg);display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
 .sec-label::before{content:'';width:20px;height:2px;background:var(--sg)}
 .sec-h{font-family:var(--ff-d);font-size:clamp(2.6rem,5vw,4.5rem);letter-spacing:.03em;line-height:.95;margin-bottom:1rem}
 .sec-h em{color:var(--gold);font-style:normal}
 .sec-sub{font-size:1rem;color:rgba(245,245,240,.5);line-height:1.72;max-width:560px}
-.sec-head-center{text-align:center;margin:0 auto 3rem}
+.sec-head-center{text-align:center;margin:0 auto 2.8rem}
 .sec-head-center .sec-label{justify-content:center}
 .sec-head-center .sec-sub{margin:0 auto}
 .fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .fade-up.vis{opacity:1;transform:translateY(0)}
 
 /* ── RESULTS SECTION ─────────────────────────────────── */
-#results{background:var(--bg);padding:88px 0;overflow:hidden}
-.results-ticker-wrap{overflow:hidden;position:relative;margin-top:2.5rem}
+#results{background:var(--bg);padding:80px 0;overflow:hidden}
+.results-ticker-wrap{overflow:hidden;position:relative;margin-top:2.8rem}
 .results-ticker-wrap::before,
 .results-ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
 .results-ticker-wrap::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
@@ -130,7 +130,7 @@ section{padding:88px 0}
 .rc-who{font-family:var(--ff-h);font-size:.6rem;font-weight:700;color:rgba(245,245,240,.2);text-transform:uppercase;letter-spacing:.1em;margin-top:.22rem}
 
 /* Stats strip */
-.stats-strip{display:flex;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;max-width:900px;margin:2.5rem auto 0}
+.stats-strip{display:flex;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;max-width:900px;margin:2.8rem auto 0}
 .stat-item{flex:1;padding:1.5rem 1rem;text-align:center;border-right:1px solid var(--border);position:relative}
 .stat-item:last-child{border-right:none}
 .stat-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
@@ -212,7 +212,7 @@ section{padding:88px 0}
 
 /* ── FAQ ─────────────────────────────────────────────── */
 #faq{background:var(--bg)}
-.faq-list{display:flex;flex-direction:column;gap:.85rem;margin-top:2.5rem;max-width:780px;margin-left:auto;margin-right:auto}
+.faq-list{display:flex;flex-direction:column;gap:.85rem;margin-top:2.8rem;max-width:780px;margin-left:auto;margin-right:auto}
 .faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .25s}
 .faq-item:hover{border-color:rgba(201,168,76,.28)}
 .faq-q{width:100%;background:none;border:none;text-align:left;padding:1.3rem 1.6rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:var(--ff-h);font-size:.9rem;font-weight:700;color:var(--white);transition:color .2s}
@@ -327,7 +327,7 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);padding:2
   .pkg-grid{grid-template-columns:1fr}
   .ob-row{grid-template-columns:1fr}
   .hero-trust{gap:.6rem}
-  section{padding:48px 0}
+  section{padding:40px 0}
 }
 
 /* ── URGENCY BAR ─────────────────────────────────────── */
