@@ -576,6 +576,32 @@ body.urg-on #hero{padding-top:130px}
   .p-toast{min-width:unset;max-width:100%}
 }
 
+/* ── AUTO RESPONSIVE UTILITIES ──────────────────────── */
+*{box-sizing:border-box}
+img,video,iframe{max-width:100%;height:auto}
+html{font-size:clamp(14px,2vw,16px)}
+body{
+  padding-left:env(safe-area-inset-left);
+  padding-right:env(safe-area-inset-right);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+h1,h2,h3,h4,p,span,a,div{
+  word-break:break-word;
+  overflow-wrap:break-word;
+}
+.pkg-grid{
+  grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));
+}
+.services-grid{
+  grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));
+}
+.ob-row{
+  grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));
+}
+.hero-ctas{flex-wrap:wrap}
+.hero-trust{flex-wrap:wrap}
+.footer-links{flex-wrap:wrap}
+.fc-feats{flex-wrap:wrap}
 </style>
 <!-- Flutterwave Inline Payment SDK -->
 <script src="https://checkout.flutterwave.com/v3.js"></script>
