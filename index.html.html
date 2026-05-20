@@ -2119,7 +2119,15 @@ function initiatePayment(){
     callback: function(response){
       if(response.status === 'successful' || response.status === 'completed'){
         closePay();
-        openOb();
+        /* Redirect to WhatsApp with pre-filled message after payment */
+        var cName  = (document.getElementById('pm-customer-name')  || {}).value || 'a new client';
+        var cPhone = (document.getElementById('pm-customer-phone') || {}).value || '';
+        var waMsg  = encodeURIComponent(
+          'Hi! I just completed payment for the ' + currentPkg + ' (' + currentAmt + ' USD). ' +
+          'My name is ' + cName + ' and my WhatsApp is ' + cPhone + '. ' +
+          'Please assign my Success Manager so we can get started!'
+        );
+        window.open('https://wa.me/' + WA_NUM + '?text=' + waMsg, '_blank');
       } else {
         if(btn){ btn.innerHTML = 'Pay with Card'; btn.disabled = false; }
         alert('Payment was not completed. Please try again.');
