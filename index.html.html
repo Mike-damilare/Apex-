@@ -43,6 +43,25 @@ img{display:block;max-width:100%}
 @keyframes plBar{to{width:100%}}
 
 /* ── HEADER ──────────────────────────────────────────── */
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '4365058937081114'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1" 
+src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
 header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.9rem 0;background:rgba(8,8,8,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05);transition:padding .3s}
 header .container{display:flex;align-items:center;justify-content:space-between}
 .h-logo img{height:40px;width:auto}
