@@ -2113,6 +2113,8 @@ function initiatePayment(){
 
   var btn = document.getElementById('pm-pay-btn');
   if(btn){ btn.innerHTML = 'Opening checkout…'; btn.disabled = true; }
+  /* Meta Pixel — InitiateCheckout event */
+  fbq('track', 'InitiateCheckout', {value: currentAmt, currency: 'USD', content_name: currentPkg});
 
   /* Numeric plan IDs from Flutterwave dashboard */
   var PLAN_IDS = {
@@ -2151,6 +2153,8 @@ function initiatePayment(){
           'Please assign my Success Manager so we can get started!'
         );
         window.open('https://wa.me/' + WA_NUM + '?text=' + msg, '_blank');
+        /* Meta Pixel — Purchase event */
+        fbq('track', 'Purchase', {value: currentAmt, currency: 'USD', content_name: currentPkg});
       } else {
         if(btn){ btn.innerHTML = 'Pay with Card'; btn.disabled = false; }
         alert('Payment was not completed. Please try again.');
@@ -2177,6 +2181,8 @@ function openPay(name, price, desc){
   var btn = document.getElementById('pm-pay-btn');
   if(btn){ btn.textContent = 'Pay with Card'; btn.disabled = false; }
   document.getElementById('pay-overlay').classList.add('open');
+  /* Meta Pixel — ViewContent event */
+  fbq('track', 'ViewContent', {content_name: currentPkg, currency: 'USD', value: currentAmt});
   document.body.style.overflow = 'hidden';
 }
 function closePay(){
