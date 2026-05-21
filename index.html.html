@@ -903,8 +903,6 @@ h1,h2,h3,h4,p,span,a,div{
 }
 
 </style>
-<!-- Flutterwave Inline Payment SDK -->
-<script src="https://checkout.flutterwave.com/v3.js"></script>
 </head>
 <body>
 
@@ -2090,53 +2088,34 @@ function initiatePayment(){
   var email = (document.getElementById('pm-customer-email') || {}).value || '';
   var phone = (document.getElementById('pm-customer-phone') || {}).value || '';
 
-  if(!name.trim())  { alert('Please enter your full name.');         return; }
-  if(!email.trim()) { alert('Please enter your email address.');     return; }
-  if(!phone.trim()) { alert('Please enter your WhatsApp / phone.');  return; }
+  if(!name.trim())  { alert('Please enter your full name.');        return; }
+  if(!email.trim()) { alert('Please enter your email address.');    return; }
+  if(!phone.trim()) { alert('Please enter your phone number.');     return; }
+
+  /* Payment links from Flutterwave dashboard */
+  var LINKS = {
+    'Launch Package':     'https://flutterwave.com/pay/rpp_a30dcf7b6b4c724d7936',
+    'Growth Accelerator': 'https://flutterwave.com/pay/rpp_e07e8422aa7540587ac5',
+    'Scale System':       'https://flutterwave.com/pay/rpp_78e43d8badc4d3ed3919',
+    'Monthly Retainer':   'https://flutterwave.com/pay/rpp_962c0045b7f9e64afb90'
+  };
+
+  var link = LINKS[currentPkg];
+  if(!link){ alert('Package not found. Please try again.'); return; }
 
   var btn = document.getElementById('pm-pay-btn');
-  if(btn){ btn.innerHTML = 'Opening payment\u2026'; btn.disabled = true; }
+  if(btn){ btn.innerHTML = 'Redirecting to checkout…'; btn.disabled = true; }
 
-  var txRef = 'APEX-' + Date.now() + '-' + Math.random().toString(36).substr(2,6).toUpperCase();
+  /* Save customer info so we can send to WhatsApp after payment */
+  try {
+    sessionStorage.setItem('apex_name',  name);
+    sessionStorage.setItem('apex_phone', phone);
+    sessionStorage.setItem('apex_pkg',   currentPkg);
+    sessionStorage.setItem('apex_amt',   currentAmt);
+  } catch(e){}
 
-  FlutterwaveCheckout({
-    public_key:      FW_PUBLIC_KEY,
-    tx_ref:          txRef,
-    amount:          currentAmt,
-    currency:        'USD',
-    payment_options: 'card',
-    payment_plan:    PLAN_IDS[currentPkg],
-    customer: {
-      name:         name,
-      email:        email,
-      phone_number: phone
-    },
-    customizations: {
-      title:       'Apex Shopify Agency',
-      description: currentPkg + ' \u2014 ' + currentDesc,
-      logo:        ''
-    },
-    callback: function(response){
-      if(response.status === 'successful' || response.status === 'completed'){
-        closePay();
-        /* Redirect to WhatsApp with pre-filled message after payment */
-        var cName  = (document.getElementById('pm-customer-name')  || {}).value || 'a new client';
-        var cPhone = (document.getElementById('pm-customer-phone') || {}).value || '';
-        var waMsg  = encodeURIComponent(
-          'Hi! I just completed payment for the ' + currentPkg + ' (' + currentAmt + ' USD). ' +
-          'My name is ' + cName + ' and my WhatsApp is ' + cPhone + '. ' +
-          'Please assign my Success Manager so we can get started!'
-        );
-        window.open('https://wa.me/' + WA_NUM + '?text=' + waMsg, '_blank');
-      } else {
-        if(btn){ btn.innerHTML = 'Pay with Card'; btn.disabled = false; }
-        alert('Payment was not completed. Please try again.');
-      }
-    },
-    onclose: function(){
-      if(btn){ btn.innerHTML = 'Pay with Card'; btn.disabled = false; }
-    }
-  });
+  /* Go to Flutterwave checkout page */
+  window.location.href = link;
 }
 
 function openPay(name, price, desc){
@@ -2211,6 +2190,33 @@ function submitOb(e){
 document.addEventListener('keydown', function(e){
   if(e.key === 'Escape'){ closePay(); closeOb(); }
 });
+</script>
+<script>
+
+/* ── Post-payment WhatsApp redirect ─────────────────── */
+(function(){
+  var name = sessionStorage.getItem('apex_name');
+  var phone = sessionStorage.getItem('apex_phone');
+  var pkg  = sessionStorage.getItem('apex_pkg');
+  var amt  = sessionStorage.getItem('apex_amt');
+
+  /* If they just came back from payment, send to WhatsApp */
+  if(name && pkg && document.referrer.indexOf('flutterwave.com') !== -1){
+    sessionStorage.removeItem('apex_name');
+    sessionStorage.removeItem('apex_phone');
+    sessionStorage.removeItem('apex_pkg');
+    sessionStorage.removeItem('apex_amt');
+
+    var msg = encodeURIComponent(
+      'Hi! I just completed payment for the ' + pkg + ' ($' + amt + '). ' +
+      'My name is ' + name + ' and my WhatsApp is ' + (phone || 'provided at checkout') + '. ' +
+          );
+    setTimeout(function(){
+      window.open('https://wa.me/2349060891445?text=' + msg, '_blank');
+    }, 1000);
+  }
+})();
+
 </script>
 </body>
 </html>
