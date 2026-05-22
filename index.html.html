@@ -902,6 +902,22 @@ h1,h2,h3,h4,p,span,a,div{
   .port-img-wrap,.port-card.wide .port-img-wrap{height:180px}
 }
 
+
+/* ── PAIN SECTION ───────────────────────────────── */
+#pain{background:var(--bg2)}
+.pain-intro{font-family:var(--ff-h);font-size:1rem;color:rgba(245,245,240,.55);
+  line-height:1.75;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto;text-align:center}
+.pain-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:2rem;max-width:780px;margin-left:auto;margin-right:auto}
+.pain-item{display:flex;align-items:flex-start;gap:1rem;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.2rem 1.4rem;transition:border-color .25s}
+.pain-item:hover{border-color:rgba(255,107,107,.3)}
+.pain-arrow{color:#ff6b6b;font-size:1.1rem;flex-shrink:0;margin-top:.1rem}
+.pain-text{font-size:.92rem;color:rgba(245,245,240,.7);line-height:1.6}
+.pain-close{text-align:center;margin-top:2.5rem;font-size:.95rem;
+  color:rgba(245,245,240,.55);line-height:1.75;max-width:620px;margin-left:auto;margin-right:auto}
+.pain-close strong{color:var(--gold)}
+
 </style>
 <script src="https://checkout.flutterwave.com/v3.js"></script>
 <!-- Meta Pixel Code -->
@@ -929,7 +945,7 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
 <!-- URGENCY BAR -->
 <div id="urg">
   <div class="urg-dot"></div>
-  <span class="urg-text">🔥 Startup pricing — <strong>only 3 spots left</strong>. Your discount expires in <strong id="urg-cd">24:00:00</strong></span>
+  <span class="urg-text">🔥 Startup Pricing — <strong>Only 3 Spots Left This Month.</strong> Lock In Your Rate Before It's Gone. Expires in <strong id="urg-cd">24:00:00</strong></span>
   <a class="urg-cta" href="#pricing">Lock In Price →</a>
   <button class="urg-close" onclick="closeUrg()" aria-label="Close">✕</button>
 </div>
@@ -1076,7 +1092,7 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
   <div class="hero-grid-overlay"></div>
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-label">Certified Shopify Partner Agency</div>
+      <div class="hero-label">New Store Owner? — Read Every Word Below</div>
       <h1 class="hero-h1">
         Your Shopify Store<br>
         Is Losing Money.<br>
@@ -1089,9 +1105,9 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
       </p>
       <div class="hero-ctas">
         <a class="btn-gold" href="https://zcal.co/apex-shopify/Growth-Strategy-Call" target="_blank" rel="noopener" onclick="fbq('track','Lead')">
-          Book Free Strategy Call →
+          Get My Free Store Audit →
         </a>
-        <a class="btn-ghost" href="#results">See Client Results ↓</a>
+        <a class="btn-ghost" href="#results">See Real Results ↓</a>
       </div>
       
       <div class="hero-countdown">
@@ -1110,18 +1126,18 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-stat">
-          <strong>$500K+</strong>
-          <span>Highest client month</span>
+          <strong>47+</strong>
+          <span>Stores Built</span>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-stat">
-          <strong>13+</strong>
-          <span>Verified results</span>
+          <strong>3.8%</strong>
+          <span>Avg. Conversion Rate</span>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-stat">
-          <strong>14 days</strong>
-          <span>Average delivery</span>
+          <strong>14 Days</strong>
+          <span>To Delivery</span>
         </div>
       </div>
     </div>
@@ -1135,6 +1151,28 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
   </div>
 </div>
 
+
+<!-- PAIN -->
+<section id="pain">
+  <div class="container">
+    <div class="sec-head-center fade-up">
+      <div class="sec-label">Sound Familiar?</div>
+      <h2 class="sec-h">You Launched. But<br><em>Nothing Is Happening.</em></h2>
+    </div>
+    <ul class="pain-list fade-up">
+      <li class="pain-item"><span class="pain-arrow">→</span><span class="pain-text">You open Shopify every morning. <strong>Zero orders. Again.</strong></span></li>
+      <li class="pain-item"><span class="pain-arrow">→</span><span class="pain-text">You're getting traffic but people are leaving without buying — and you <strong>don't know why.</strong></span></li>
+      <li class="pain-item"><span class="pain-arrow">→</span><span class="pain-text">You've already paid a "Shopify expert" who took your money and delivered a <strong>store that doesn't work.</strong></span></li>
+      <li class="pain-item"><span class="pain-arrow">→</span><span class="pain-text">You're running ads into a broken funnel — <strong>burning budget with nothing to show for it.</strong></span></li>
+      <li class="pain-item"><span class="pain-arrow">→</span><span class="pain-text">You're starting to wonder if <strong>this whole Shopify thing was a mistake.</strong></span></li>
+    </ul>
+    <p class="pain-close fade-up">
+      It wasn't a mistake. You just haven't had anyone fix the one thing that makes all the difference:
+      <strong>a store that's actually built to convert.</strong><br><br>
+      — That's exactly what Apex does.
+    </p>
+  </div>
+</section>
 
 <!-- PORTFOLIO -->
 <section id="portfolio">
@@ -1258,7 +1296,7 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
   <div class="container">
     <div class="sec-head-center fade-up">
       <div class="sec-label">Proof It Works</div>
-      <h2 class="sec-h">Real Results From Our<br><em>Clients & Community</em></h2>
+      <h2 class="sec-h">Store Owners Who<br><em>Stopped Guessing.</em></h2>
       <p class="sec-sub">Actual Shopify dashboards. Every screenshot is unedited.
          Revenue figures speak for themselves.</p>
     </div>
@@ -1486,8 +1524,8 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
   <div class="container">
     <div class="sec-head-center fade-up">
       <div class="sec-label">What We Do</div>
-      <h2 class="sec-h">Six Ways We Turn<br><em>Clicks Into Revenue</em></h2>
-      <p class="sec-sub">Every service targets a specific conversion leak. We fix what's costing you money.</p>
+      <h2 class="sec-h">Everything We Do To<br><em>Make Your Store Sell.</em></h2>
+      <p class="sec-sub">We don't just build stores. We build conversion machines — then hand you the keys.</p>
     </div>
     <div class="services-grid fade-up">
       <div class="svc"><span class="svc-n">01</span><div class="svc-icon">🏪</div><div class="svc-title">Shopify Store Build or Redesign</div><p class="svc-desc">From blank canvas to revenue-ready. Or we take your existing store and completely rebuild it for performance. Mobile-first, fast, and conversion-engineered.</p></div>
@@ -1505,7 +1543,7 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
   <div class="container">
     <div class="sec-head-center fade-up">
       <div class="sec-label">What You Get</div>
-      <h2 class="sec-h">The Complete<br><em>Offer Stack</em></h2>
+      <h2 class="sec-h">Everything Included.<br><em>Nothing Left Out.</em></h2>
       <p class="sec-sub">Every package includes the full execution system — not just a design handoff.</p>
     </div>
     <div class="offer-grid fade-up">
@@ -1566,7 +1604,7 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
   <div class="container">
     <div class="sec-head-center fade-up">
       <div class="sec-label">Investment</div>
-      <h2 class="sec-h">Choose Your<br><em>Growth Path</em></h2>
+      <h2 class="sec-h">Simple. Transparent.<br><em>No Surprises.</em></h2>
       <p class="sec-sub">No hidden fees. 50% upfront, 50% on delivery. Cancel the retainer any time.</p>
     </div>
 
@@ -1687,7 +1725,7 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
     <div class="scarcity-inner fade-up">
       <div>
         <div class="scarcity-eyebrow">We Are Selective</div>
-        <h2 class="scarcity-h">We Only Take<br>Stores We Can <em style="color:var(--gold)">Improve</em></h2>
+        <h2 class="scarcity-h">We Are<br><em style="color:var(--gold)">Selective.</em></h2>
         <ul class="scarcity-pts">
           <li>Only <strong>3&ndash;5 stores</strong> accepted per week &mdash; we don't overcommit</li>
           <li>We review every store before accepting &mdash; if we can't improve it, we tell you</li>
@@ -1730,11 +1768,11 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
       </div>
       <div class="risk-text fade-up">
         <span class="sec-label">Zero Risk</span>
-        <h2 class="sec-h">We Put Our<br>Money Where<br>Our <em>Mouth Is</em></h2>
-        <p>Before we start any project, we conduct an initial store review. If we determine your store cannot be meaningfully improved &mdash; we will tell you honestly and refund your payment in full.</p>
-        <p>We've built this policy because we only want to work on projects where we can genuinely move the needle. We don't take every client. We take the right ones.</p>
+        <h2 class="sec-h">If We Don't Deliver,<br><em>You Don't Pay.</em></h2>
+        <p>We're so confident in our process that we back every project with a simple promise: if we don't measurably improve your store's conversion rate within 30 days of launch — <strong>you get a full refund.</strong></p>
+        <p>No arguments. No small print. No stress. We've been burned by fake experts too. We know what it feels like. That's why we make this easy.</p>
         <div class="risk-highlight">
-          <p>"If we review your store and determine we cannot meaningfully improve your conversion rate or revenue, we will refund your payment. No questions. No negotiations. This is our commitment to results over revenue."</p>
+          <p>"The Apex Zero-Risk Guarantee: if we don't measurably improve your store's conversion rate within 30 days of launch — you get a full refund. No arguments. No small print. No stress."</p>
         </div>
       </div>
     </div>
@@ -1753,10 +1791,10 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
       
       
       <div class="faq-item fade-up"><button class="faq-q" onclick="toggleFaq(this)">How does payment work?<span class="faq-arr">&#9660;</span></button><div class="faq-a">Simply choose a plan and complete your secure card payment. Within 24 hours, you’ll be personally assigned a dedicated Conversion Success Manager who will guide you through every step — from onboarding to your first sale. No confusing processes, no waiting around. You pay once, we start immediately, and we don’t stop until you see real results.</div></div>
-      <div class="faq-item fade-up"><button class="faq-q" onclick="toggleFaq(this)">Do you need access to my Shopify account?<span class="faq-arr">&#9660;</span></button><div class="faq-a">Yes — we need collaborator access to build and publish the design. This is a limited permission level. We cannot access your payouts or billing. You can revoke it instantly at any time.</div></div>
-      <div class="faq-item fade-up"><button class="faq-q" onclick="toggleFaq(this)">Do you work with new stores or existing ones?<span class="faq-arr">&#9660;</span></button><div class="faq-a">Both. The Launch Package is designed for new brands starting from scratch. Growth Accelerator and Scale System work for existing stores needing a serious upgrade. The free call helps us figure out the right fit.</div></div>
-      <div class="faq-item fade-up"><button class="faq-q" onclick="toggleFaq(this)">What do I need to provide to get started?<span class="faq-arr">&#9660;</span></button><div class="faq-a">For a new store: your logo, brand colours, product images, and any inspiration references. For a redesign: access to your existing store. We guide you through everything on the strategy call — you don't need it all figured out beforehand.</div></div>
-      <div class="faq-item fade-up"><button class="faq-q" onclick="toggleFaq(this)">Can you guarantee results?<span class="faq-arr">&#9660;</span></button><div class="faq-a">We guarantee a professionally built, conversion-optimised store delivered on time. Specific revenue figures depend on your product, pricing, and traffic. What we can say: a properly designed store consistently outperforms a poorly designed one — which is why we offer the free call first.</div></div>
+      <div class="faq-item fade-up"><button class="faq-q" onclick="toggleFaq(this)">How long does it actually take?<span class="faq-arr">&#9660;</span></button><div class="faq-a">Our CRO Build takes 14 days from the moment we receive your onboarding form. Full store builds take 21 days. We don't rush — but we don't waste time either.</div></div>
+      <div class="faq-item fade-up"><button class="faq-q" onclick="toggleFaq(this)">Do I need to be running ads for this to work?<span class="faq-arr">&#9660;</span></button><div class="faq-a">No. A higher conversion rate means more sales from whatever traffic you already have — organic, social, word-of-mouth. If you do run ads, you'll simply see a much better return once your store converts properly.</div></div>
+      <div class="faq-item fade-up"><button class="faq-q" onclick="toggleFaq(this)">I'm brand new to Shopify. Is this for me?<span class="faq-arr">&#9660;</span></button><div class="faq-a">Absolutely. In fact, the best time to get your store built right is before you spend a single dollar on ads. Starting with a properly optimised store means every visitor counts from day one.</div></div>
+      <div class="faq-item fade-up"><button class="faq-q" onclick="toggleFaq(this)">What if I already have a store but it's not converting?<span class="faq-arr">&#9660;</span></button><div class="faq-a">That's our speciality. Most of our clients come to us after being stuck at less than 1% conversion rate. We diagnose exactly what's broken and fix it — fast.</div></div>
     </div>
   </div>
 </section>
@@ -1766,11 +1804,11 @@ src="https://www.facebook.com/tr?id=4365058937081114&ev=PageView&noscript=1"/>
 <section id="cta-final">
   <div class="container">
     <div class="cta-inner fade-up">
-      <div class="sec-label">One Decision Changes Everything</div>
-      <h2 class="sec-h">Stop Losing Revenue.<br><em>Start Today.</em></h2>
-      <p>Instant onboarding. Immediate execution. Your Conversion Success Manager is assigned within 24 hours of payment. Optimisation begins the same day.</p>
+      <div class="sec-label">Ready To Stop Guessing?</div>
+      <h2 class="sec-h">Get Your Free<br><em>Store Audit Today.</em></h2>
+      <p>In 15 minutes, we'll show you the exact reasons your store isn't converting — and what to do about it. <strong style="color:var(--gold)">Free. No pitch. No pressure.</strong></p>
       <p style="font-size:.85rem;color:rgba(245,245,240,.38);margin-bottom:1.8rem">
-        Only 3&ndash;5 spots available per week. Stores reviewed before acceptance.
+        Limited to 3 free audits per week. Reserve yours before they're gone.
       </p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem">
         <a class="btn-gold" style="display:inline-flex;font-size:1rem;padding:1.1rem 2.6rem"
