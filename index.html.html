@@ -363,6 +363,63 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);
   .audit-input{padding:.75rem 1rem;border-radius:8px}
   .audit-btn{border-radius:8px;width:100%;justify-content:center}
 }
+
+/* ── VIDEO TESTIMONIALS ─────────────────────────── */
+.vtesti-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.4rem;
+  margin-top:2.5rem;
+}
+.vtesti-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  overflow:hidden;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+.vtesti-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 50px rgba(0,0,0,.5);
+  border-color:rgba(201,168,76,.3);
+}
+.vtesti-video-wrap{
+  position:relative;
+  width:100%;
+  background:#000;
+  aspect-ratio:9/16;
+  overflow:hidden;
+}
+.vtesti-video-wrap video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.vtesti-info{
+  padding:1rem 1.1rem;
+  border-top:1px solid var(--border);
+}
+.vtesti-stars{
+  color:var(--gold);
+  font-size:.8rem;
+  margin-bottom:.35rem;
+}
+.vtesti-name{
+  font-family:var(--fh);
+  font-size:.85rem;
+  font-weight:700;
+  margin-bottom:.15rem;
+}
+.vtesti-role{
+  font-size:.68rem;
+  color:var(--grey);
+}
+@media(max-width:768px){
+  .vtesti-grid{grid-template-columns:1fr}
+  .vtesti-video-wrap{aspect-ratio:9/16;max-height:400px}
+}
+
 </style>
 </head>
 <body>
@@ -475,41 +532,48 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);
   </div>
 </section>
 
-<!-- PROOF / TESTIMONIALS -->
-<section id="proof">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:2.5rem" class="fade-up">
-      <span class="sec-label center">Real Store Owners</span>
-      <h2 class="sec-h">Don't Take Our<br><em>Word For It.</em></h2>
+<!-- PROOF / VIDEO TESTIMONIALS -->
+<section class="videos">
+
+    <!-- VIDEO 1 -->
+    <div style="padding:177.92% 0 0 0;position:relative;">
+      <iframe 
+        src="https://player.vimeo.com/video/1195269991?badge=0&autopause=0&player_id=0&app_id=58479"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+        title="video1">
+      </iframe>
     </div>
-    <div class="testi-grid">
-      <div class="testi-card fade-up">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-q">I'd already spent £800 on a freelancer who built me a store that got zero sales. Apex rebuilt it in 12 days. Got my first 6 orders in the first week.</p>
-        <div class="testi-author">
-          <div class="tav" style="background:linear-gradient(135deg,#C9A84C,#9B7A30)">SM</div>
-          <div><div class="tname">Sarah M.</div><div class="trole">Candle Store · UK</div></div>
-        </div>
-      </div>
-      <div class="testi-card fade-up">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-q">My conversion rate went from 0.4% to 3.6% in 18 days. That's not a tweak — that's a completely different business. I'm finally making real money.</p>
-        <div class="testi-author">
-          <div class="tav" style="background:linear-gradient(135deg,#96BF48,#5E8E3E)">DO</div>
-          <div><div class="tname">Daniel O.</div><div class="trole">Fashion Brand · Nigeria</div></div>
-        </div>
-      </div>
-      <div class="testi-card fade-up">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-q">The free audit found 5 issues in 15 minutes I'd ignored for months. Consistent daily sales in under 3 weeks after the full build.</p>
-        <div class="testi-author">
-          <div class="tav" style="background:linear-gradient(135deg,#4A90D9,#2C5F8A)">AK</div>
-          <div><div class="tname">Amira K.</div><div class="trole">Skincare Brand · UAE</div></div>
-        </div>
-      </div>
+
+    <!-- VIDEO 2 -->
+    <div style="padding:177.78% 0 0 0;position:relative;">
+      <iframe 
+        src="https://player.vimeo.com/video/1195269988?badge=0&autopause=0&player_id=0&app_id=58479"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+        title="video2">
+      </iframe>
     </div>
-  </div>
-</section>
+
+    <!-- VIDEO 3 -->
+    <div style="padding:180% 0 0 0;position:relative;">
+      <iframe 
+        src="https://player.vimeo.com/video/1195269990?badge=0&autopause=0&player_id=0&app_id=58479"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+        title="video3">
+      </iframe>
+    </div>
+
+  </section>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
 
 <!-- GUARANTEE -->
 <section id="guarantee">
@@ -714,9 +778,31 @@ function bookCall(){
     setTimeout(function(){err.style.display='none';form.style.borderColor='';},3000);
     return;
   }
+  /* Track lead */
   if(typeof fbq!=='undefined') fbq('track','Lead',{content_name:'Free Audit'});
+  /* Save locally */
   try{ sessionStorage.setItem('apex_store',url); }catch(e){}
-  window.open('https://zcal.co/apex-shopify/Growth-Strategy-Call','_blank');
+
+  /* Submit store URL to Formspree so you can audit before the call */
+  var btn = document.querySelector('.audit-btn');
+  if(btn){ btn.textContent='Booking…'; btn.disabled=true; }
+
+  fetch('https://formspree.io/f/mdabvjbl',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      _subject: 'New Free Audit Request — ' + url,
+      store_url: url,
+      source: 'Free Audit Form'
+    })
+  }).then(function(r){
+    if(btn){ btn.textContent='Book Call'; btn.disabled=false; }
+    /* Open Zcal regardless of Formspree result */
+    window.open('https://zcal.co/apex-shopify/Growth-Strategy-Call','_blank');
+  }).catch(function(){
+    if(btn){ btn.textContent='Book Call'; btn.disabled=false; }
+    window.open('https://zcal.co/apex-shopify/Growth-Strategy-Call','_blank');
+  });
 }
 
 /* ── Scroll to form ──────────────────────────────── */
