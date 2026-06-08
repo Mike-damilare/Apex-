@@ -465,6 +465,79 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);
   .rc-stat:last-child{border-bottom:none}
 }
 
+
+/* ── DFY CARD ───────────────────────────────────── */
+.dfy-card{
+  background:linear-gradient(135deg,rgba(201,168,76,.08) 0%,rgba(201,168,76,.03) 100%);
+  border:1.5px solid var(--gold);
+  border-radius:var(--r);
+  padding:2rem 2rem;
+  margin-top:1.2rem;
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:2rem;
+  transition:transform .3s,box-shadow .3s;
+}
+.dfy-card:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(201,168,76,.15)}
+.dfy-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.dfy-badge{position:absolute;top:1rem;right:1rem;
+  font-family:var(--fh);font-size:.58rem;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;background:var(--gold);color:#080808;
+  padding:.2rem .6rem;border-radius:50px}
+.dfy-title{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.2rem);
+  letter-spacing:.04em;line-height:1;margin-bottom:.5rem}
+.dfy-sub{font-size:.88rem;color:rgba(245,245,240,.55);line-height:1.65;
+  margin-bottom:1rem;max-width:520px}
+.dfy-feats{display:flex;flex-wrap:wrap;gap:.4rem .9rem;list-style:none}
+.dfy-feats li{font-size:.8rem;color:rgba(245,245,240,.65);
+  display:flex;align-items:center;gap:.38rem}
+.dfy-feats li::before{content:'✓';color:var(--gold);font-weight:700}
+.dfy-cta{display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap;
+  font-family:var(--fh);font-size:.92rem;font-weight:700;
+  padding:1rem 2rem;background:var(--gold);color:#080808;
+  border-radius:50px;border:none;cursor:pointer;flex-shrink:0;
+  box-shadow:0 8px 28px rgba(201,168,76,.3);
+  transition:background .2s,transform .15s}
+.dfy-cta:hover{background:var(--gold-lt);transform:translateY(-2px)}
+@media(max-width:768px){
+  .dfy-card{grid-template-columns:1fr}
+  .dfy-cta{width:100%;justify-content:center}
+}
+
+
+.dfy-card{background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.02));
+  border:1.5px solid var(--gold);border-radius:var(--r);padding:2rem;
+  margin-top:1.2rem;position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;
+  transition:transform .3s,box-shadow .3s}
+.dfy-card:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(201,168,76,.15)}
+.dfy-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.dfy-badge{position:absolute;top:1rem;right:1rem;font-family:var(--fh);
+  font-size:.58rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--gold);color:#080808;padding:.2rem .6rem;border-radius:50px}
+.dfy-title{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.2rem);
+  letter-spacing:.04em;line-height:1;margin-bottom:.5rem}
+.dfy-sub{font-size:.88rem;color:rgba(245,245,240,.55);line-height:1.65;
+  margin-bottom:1rem;max-width:520px}
+.dfy-feats{display:flex;flex-wrap:wrap;gap:.4rem .9rem;list-style:none}
+.dfy-feats li{font-size:.8rem;color:rgba(245,245,240,.65);
+  display:flex;align-items:center;gap:.38rem}
+.dfy-feats li::before{content:'✓';color:var(--gold);font-weight:700}
+.dfy-cta{display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap;
+  font-family:var(--fh);font-size:.92rem;font-weight:700;
+  padding:1rem 2rem;background:var(--gold);color:#080808;
+  border-radius:50px;border:none;cursor:pointer;flex-shrink:0;
+  box-shadow:0 8px 28px rgba(201,168,76,.3);transition:background .2s,transform .15s}
+.dfy-cta:hover{background:var(--gold-lt);transform:translateY(-2px)}
+@media(max-width:768px){
+  .dfy-card{grid-template-columns:1fr}
+  .dfy-cta{width:100%;justify-content:center}
+}
 </style>
 <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
@@ -913,6 +986,32 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.05);
       </div>
 
     </div>
+
+    <!-- Done For You Shopify Store -->
+    <div class="dfy-card fade-up">
+      <span class="dfy-badge">NEW OFFER</span>
+      <div>
+        <div class="dfy-title">Done-For-You Shopify Store</div>
+        <div class="dfy-sub">
+          You focus on your business. We handle everything — strategy, design, build, and launch.
+          Hand us the brief and get back a store that's ready to sell from day one.
+        </div>
+        <ul class="dfy-feats">
+          <li>Full store built from scratch</li>
+          <li>Custom design — your brand, your vision</li>
+          <li>Conversion-optimised product pages</li>
+          <li>Mobile + speed optimisation</li>
+          <li>Meta Ads Pixel + tracking setup</li>
+          <li>Checkout optimisation</li>
+          <li>60-day post-launch support</li>
+          <li>Dedicated Success Manager</li>
+        </ul>
+      </div>
+      <button class="dfy-cta" onclick="openPay('Done For You Store','$2,997','Full done-for-you Shopify build')">
+        Get Started →
+      </button>
+    </div>
+
   </div>
 </section>
 
@@ -1073,12 +1172,13 @@ document.addEventListener('DOMContentLoaded',function(){
 
 /* ── Payment modal ───────────────────────────────── */
 var FW_PUBLIC_KEY = 'FLWPUBK-679713370986aa11d11a878a60d60c9d-X';
-var PRICES = {'Launch Package':797,'Growth Accelerator':1497,'Scale System':2997,'Monthly Retainer':597};
+var PRICES = {'Launch Package':797,'Growth Accelerator':1497,'Scale System':2997,'Monthly Retainer':597,'Done For You Store':2997};
 var PLAN_IDS = {
   'Launch Package':     159809,
   'Growth Accelerator': 159810,
   'Scale System':       159345,
-  'Monthly Retainer':   159393
+  'Monthly Retainer':   159393,
+    'Done For You Store': 159345
 };
 var currentPkg='', currentAmt=0, currentDesc='', WA_NUM='2349060891445';
 
